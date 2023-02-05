@@ -1,91 +1,51 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+"use client"
 import styles from './page.module.css'
+import { FiUserPlus } from "react-icons/fi";
 
-const inter = Inter({ subsets: ['latin'] })
+import Table from 'layouts/Table';
+import Form from 'layouts/form';
+
+import { useState } from "react";
 
 export default function Home() {
+
+  const [visible, setVisible] = useState(false);
+
+  const handler = () => {
+    setVisible(visible ? false : true)
+  }
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+    <main className='py-5'>
+      <h1 className='text-xl md:text-5xl text-center  py-10 '>Sistemas Cadastro<sup></sup>  </h1>
+      <div className='container mx-auto flex-between py-5 border-b'>
+        <div className='left flex gap-3'>
+          <button onClick={handler} className='flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-grary-50 hover:border-indigo-500 hover:text-gray-800'>
+            <span className='px-1'>
+              <FiUserPlus size={20} />
+            </span>
+            Adicionar novo usuário
+          </button>
         </div>
+
+        {/** Form */}
+        {visible ? <Form /> : <></>}
+        {/** Form */}
+
+
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      {/**tabela */}
+      <div className='container mx-auto py-5 '>
+        <Table />
+      </div >
+      {/**Tabela */}
+    </main >
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
+
 }

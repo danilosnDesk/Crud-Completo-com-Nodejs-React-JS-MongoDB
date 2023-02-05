@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nome": "Danilson Kayumbuca",
+        "avatar": "/public/avatars/avatar-1.jpg",
+        "email": "artmiss264@gmail.com",
+        "salario": "5788989 ",
+        "date": "1/12/2022",
+        "status": "Active"
+    },
+    {
+        "id": 2,
+        "nome": "Danilson Kayumbuca",
+        "avatar": "/public/avatars/avatar-1.jpg",
+        "email": "artmiss264@gmail.com",
+        "salario": "5788989 ",
+        "date": "1/12/2022",
+        "status": "Active"
+    },
+    {
+        "id": 3,
+        "nome": "Danilson Kayumbuca",
+        "avatar": "/public/avatars/avatar-1.jpg",
+        "email": "artmiss264@gmail.com",
+        "salario": "5788989 ",
+        "date": "1/12/2022",
+        "status": "Active"
+    }
+]
